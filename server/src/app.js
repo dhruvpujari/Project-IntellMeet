@@ -2,6 +2,14 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "IntellMeet Backend API is live",
+    healthCheck: "/api/health",
+  });
+});
+
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const meetingRoutes = require("./routes/meetingRoutes");
